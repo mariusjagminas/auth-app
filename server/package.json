@@ -1,0 +1,32 @@
+{
+  "name": "auth-app",
+  "version": "1.0.0",
+  "description": "Full stack app build with express node angular mg db",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "lint": "eslint src/**"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
+  },
+  "author": "Marius Jagminas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "volleyball": "^1.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "nodemon": "^2.0.3",
+    "prettier": "2.0.5"
+  }
+}
