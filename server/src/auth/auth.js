@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/signup', middleware.validateUser, (req, res) => {
-  res.status(200).send('ok');
+  res.status(200).send('User validation succeed');
 
   // eslint-disable-next-line no-console
   console.log(
