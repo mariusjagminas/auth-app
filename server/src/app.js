@@ -2,6 +2,8 @@ const express = require('express');
 const volleyball = require('volleyball');
 
 const auth = require('./auth/auth');
+const errorHandler = require('./middlewares/errorHandler');
+const notFound = require('./middlewares/notFound');
 
 const app = express();
 
@@ -13,18 +15,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', auth);
-
-const errorHandler = (err, req, res, next) => {
-  res.status(res.statusCode || 500);
-  res.json({
-    message: err.message,
-  });
-  next();
-};
-
-const notFound = (req, res) => {
-  res.status(404).send('Not found');
-};
 
 app.use(errorHandler);
 app.use(notFound);
