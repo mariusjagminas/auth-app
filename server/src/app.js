@@ -22,12 +22,3 @@ app.use(errorHandler);
 app.use(notFound);
 
 module.exports = app;
-
-// const db = require('./db/conection');
-
-// db.then(() => {
-//   // eslint-disable-next-line no-console
-//   console.log(
-//     '************** Conection with MongoDB Atlas has been established****************'
-//   );
-// });
