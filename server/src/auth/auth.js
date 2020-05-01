@@ -1,14 +1,20 @@
 const express = require('express');
-const logIn = require('./auth.logIn');
-const signUp = require('./auth.signUp');
+const middleware = require('./auth.middleware');
 
 const router = express.Router();
 
-router.post('/', (req, res) => {
-  res.send("route './auth' is accesible");
+router.get('/', (req, res) => {
+  res.send('auth/ route is working');
 });
 
-router.post('/signin', signUp);
-router.post('/login', logIn);
+router.post('/signup', middleware.validateUser, (req, res) => {
+  res.status(200).send('ok');
+
+  // eslint-disable-next-line no-console
+  console.log(
+    '************************User validation succeed********************************************'
+  );
+});
+// router.post('/login', logIn);
 
 module.exports = router;
